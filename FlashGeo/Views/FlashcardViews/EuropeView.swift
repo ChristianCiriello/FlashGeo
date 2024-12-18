@@ -39,7 +39,7 @@ struct EuropeView: View {
                     Image(flashcard.imageName)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 200)
+                        .frame(width: 250, height: 250)
                 }
                 .padding()
                 .background(Color.yellow)
@@ -54,15 +54,20 @@ struct EuropeView: View {
 
                 // Pulsante "Next Question"
                 if isFlipped {
-                    Button("Next Flashcard") {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 25)
+                            .frame(width: 140, height: 30)
+                            .foregroundColor(.blue)
+                        Button("Next Flashcard") {
                         // goes to the next flashcard
                         currentCardIndex += 1
                         isFlipped = false
                         // Re-hide the answer of the new flashcard
                     }
-                    .bold()
-                    .padding()
-                    
+                            .foregroundColor(.white)
+                            .bold()
+                            .padding()
+                    }
                 }
             } else {
                 Text("No more questions!")

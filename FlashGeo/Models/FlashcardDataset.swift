@@ -11,14 +11,26 @@ struct FlashcardDataset {
     static let africa: [Flashcard] = [
         Flashcard(
             question: "Which Country is it?",
-            answer: "The Sahara Desert",
-            imageName: "Germany",
+            answer: "Kenya",
+            imageName: "Kenya",
             continent: "Africa"
         ),
         Flashcard(
             question: "Which Country is it?",
-            answer: "The Nile River",
-            imageName: "nile",
+            answer: "Democratic Republic of the Congo",
+            imageName: "Democratic Republic of the Congo",
+            continent: "Africa"
+        ),
+        Flashcard(
+            question: "Which Country is it?",
+            answer: "South Africa",
+            imageName: "SouthAfrica",
+            continent: "Africa"
+        ),
+        Flashcard(
+            question: "Which Country is it?",
+            answer: "Egypt",
+            imageName: "Egypt",
             continent: "Africa"
         )
     ]

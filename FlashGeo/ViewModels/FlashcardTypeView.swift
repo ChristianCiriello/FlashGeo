@@ -58,11 +58,6 @@ struct CardSideView_question: View {
     let textColor: Color
     
     var body: some View {
-        VStack {
-            Text ("Which country it is?")
-                 .font(.title)
-                 .bold()
-                 .foregroundColor(.blue)
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .fill(backgroundColor)
@@ -71,18 +66,9 @@ struct CardSideView_question: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 250, height: 250)
-                
-                // .scaledToFill()
-                /*   Text(text)
-                 .font(.title)
-                 .foregroundColor(textColor)
-                 .multilineTextAlignment(.center)
-                 .padding()
-                 */
             }
         }
     }
-}
 struct CardSideView_answer: View {
     let text: String
     let backgroundColor: Color
