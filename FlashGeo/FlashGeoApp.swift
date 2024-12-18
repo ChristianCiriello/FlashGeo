@@ -11,7 +11,18 @@ import SwiftUI
 struct FlashGeoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                // Home Tab
+                Tab ("Home", systemImage: "house.fill"){
+                    ContentView()
+                }
+                // Trivia Tab
+                
+                    Tab ("Trivia", systemImage: "brain.filled.head.profile"){
+                        TriviaView()
+                    }
+                    
+            }
         }
     }
 }
