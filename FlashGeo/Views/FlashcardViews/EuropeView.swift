@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct EuropeView: View {
+    // MARK: - State Variables
     @State private var currentCardIndex = 0
     @State private var isFlipped = false
     
-    // Recupero le flashcard per l'Europa dal dataset
+    // MARK: - Content
+    // Takes flashcard from Europe Dataset
     private var flashcards: [Flashcard] {
         return FlashcardDataset.continents["Europe"] ?? []
     }
-
     var body: some View {
         VStack {
             if currentCardIndex < flashcards.count {
                 let flashcard = flashcards[currentCardIndex]
                 
-                // FlashcardView con logica di flip
+                // FlashcardView with flip logic
                 VStack(alignment: .leading) {
                     Text(flashcard.question)
                         .font(.headline)
@@ -46,17 +47,18 @@ struct EuropeView: View {
                 .shadow(radius: 5)
                 .onTapGesture {
                     withAnimation {
-                        // Capovolgi la carta per mostrare la risposta
+                        // Flip the flashcard to show the answer
                         isFlipped.toggle()
                     }
                 }
 
                 // Pulsante "Next Question"
                 if isFlipped {
-                    Button("Next Question") {
-                        // Vai alla prossima flashcard
+                    Button("Next Flashcard") {
+                        // goes to the next flashcard
                         currentCardIndex += 1
-                        isFlipped = false // Torna a nascondere la risposta per la nuova domanda
+                        isFlipped = false
+                        // Re-hide the answer of the new flashcard
                     }
                     .bold()
                     .padding()

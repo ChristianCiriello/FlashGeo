@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Netherlands.png",
+      "filename" : "Kenya.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Netherlands 1.png",
+      "filename" : "Kenya 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Netherlands 2.png",
+      "filename" : "Kenya 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

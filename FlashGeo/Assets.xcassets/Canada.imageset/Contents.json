@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Germany.png",
+      "filename" : "Canada.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Germany 1.png",
+      "filename" : "Canada 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Germany 2.png",
+      "filename" : "Canada 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
