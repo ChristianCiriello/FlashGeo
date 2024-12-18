@@ -20,32 +20,52 @@ struct EuropeView: View {
         VStack {
             if currentCardIndex < flashcards.count {
                 let flashcard = flashcards[currentCardIndex]
-                FlashcardView2(
-                    question: flashcard.question,
-                    answer: flashcard.answer,
-                    imageName: flashcard.imageName
-                )
+                
+                // FlashcardView con logica di flip
+                VStack(alignment: .leading) {
+                    Text(flashcard.question)
+                        .font(.headline)
+                        .padding(.bottom, 5)
+                    
+                    if isFlipped {
+                        Text(flashcard.answer)
+                            .font(.subheadline)
+                            .padding(.bottom, 5)
+                    }
+                    
+                    Image(flashcard.imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                }
                 .padding()
+                .background(Color.yellow)
+                .cornerRadius(10)
+                .shadow(radius: 5)
+                .onTapGesture {
+                    withAnimation {
+                        // Capovolgi la carta per mostrare la risposta
+                        isFlipped.toggle()
+                    }
+                }
 
-                // Aggiungi il pulsante "Next Question" solo quando la risposta è visibile
+                // Pulsante "Next Question"
                 if isFlipped {
                     Button("Next Question") {
                         // Vai alla prossima flashcard
                         currentCardIndex += 1
                         isFlipped = false // Torna a nascondere la risposta per la nuova domanda
                     }
+                    .bold()
                     .padding()
+                    
                 }
             } else {
                 Text("No more questions!")
+                    .foregroundColor(.blue)
+                    .bold()
                     .font(.title)
                     .padding()
-            }
-        }
-        .onTapGesture {
-            withAnimation {
-                // Capovolgi la carta per mostrare la risposta
-                isFlipped.toggle()
             }
         }
     }
