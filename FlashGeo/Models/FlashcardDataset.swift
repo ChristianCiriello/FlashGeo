@@ -70,7 +70,7 @@ struct FlashcardDataset {
             continent: "Oceania"
         )
     ]
-
+// to change Lowercased capital letter
     static let continents: [String: [Flashcard]] = [
         "Africa": africa,
         "Europe": europe,

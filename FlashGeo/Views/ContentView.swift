@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            VStack (spacing: 100){
+            VStack (spacing: 65){
                 // Begin ZStack Rectangles)
                 ZStack {
                     RoundedRectangle (cornerRadius: 35)
@@ -36,23 +36,26 @@ struct ContentView: View {
                     } // End Vstack x texts
                 }// (End ZStack Rectangles)
                
-                .padding(.top, -30)
+                .padding(.top, -50)
                 VStack {
                     HStack {
-                        NavigationLink(destination: AmericaView()){
+                        NavigationLink(destination: North_americaView()){
                             
                             Circle()
                                 .frame(width: 120, height: 120)
+                                .foregroundColor(.yellow)
                         }
                         NavigationLink(destination: EuropeView()){
                             
                             Circle()
                                 .frame(width: 120, height: 120)
+                                .foregroundColor(.yellow)
                         }
                         NavigationLink(destination: AfricaView()){
                             
                             Circle()
                                 .frame(width: 120, height: 120)
+                                .foregroundColor(.yellow)
                         }
                         
                     }
@@ -64,11 +67,18 @@ struct ContentView: View {
                                 
                                 Circle()
                                     .frame(width: 120, height: 120)
+                                    .foregroundColor(.yellow)
                             }
                             NavigationLink(destination: OceaniaView()){
                                 
                                 Circle()
                                     .frame(width: 120, height: 120)
+                                    .foregroundColor(.yellow)
+                            }
+                            NavigationLink(destination: South_americaView()){
+                                Circle()
+                                    .frame(width: 120, height: 120)
+                                    .foregroundColor(.yellow)
                             }
                         }
                     }

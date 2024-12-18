@@ -29,7 +29,9 @@ struct EuropeView: View {
                     
                     if isFlipped {
                         Text(flashcard.answer)
-                            .font(.subheadline)
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
                             .padding(.bottom, 5)
                     }
                     
