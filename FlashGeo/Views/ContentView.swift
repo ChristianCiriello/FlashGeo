@@ -49,27 +49,47 @@ struct ContentView: View {
                     HStack {
                         NavigationLink(destination: North_americaView()){
                             
-                            Circle()
-                                .frame(width: 120, height: 120)
-                                .foregroundColor(.yellow)
-                                .accessibilityLabel("North America")
-                                .accessibilityHint("Opens the North America view")
+                            ZStack {
+                    
+                                Circle()
+                                    .frame(width: 120, height: 120)
+                                    .foregroundColor(.yellow)
+                                    .accessibilityLabel("North America")
+                                    .accessibilityHint("Opens the North America view")
+                                Image("North america")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:80)
+                            }
                         }
                         NavigationLink(destination: EuropeView()){
                             
-                            Circle()
-                                .frame(width: 120, height: 120)
-                                .foregroundColor(.yellow)
-                                .accessibilityLabel("Europe")
-                                .accessibilityHint("Opens the Europe view")
+                            ZStack {
+                                Circle()
+                                    .frame(width: 120, height: 120)
+                                    .foregroundColor(.yellow)
+                                    .accessibilityLabel("Europe")
+                                    .accessibilityHint("Opens the Europe view")
+                                Image("Europe")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:80)
+                            }
                         }
                         NavigationLink(destination: AfricaView()){
                             
-                            Circle()
-                                .frame(width: 120, height: 120)
-                                .foregroundColor(.yellow)
-                                .accessibilityLabel("Africa")
-                                .accessibilityHint("Opens the Africa view")
+                            ZStack {
+                                Circle()
+                                    .frame(width: 120, height: 120)
+                                    .foregroundColor(.yellow)
+                                    .accessibilityLabel("Africa")
+                                    .accessibilityHint("Opens the Africa view")
+                                Image("Africa")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:80)
+                                
+                            }
                         }
                         
                     }
@@ -79,26 +99,47 @@ struct ContentView: View {
                         HStack {
                             NavigationLink(destination: AsiaView()){
                                 
-                                Circle()
-                                    .frame(width: 120, height: 120)
-                                    .foregroundColor(.yellow)
-                                    .accessibilityLabel("Asia")
-                                    .accessibilityHint("Opens the Asia view")
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 120, height: 120)
+                                        .foregroundColor(.yellow)
+                                        .accessibilityLabel("Asia")
+                                        .accessibilityHint("Opens the Asia view")
+                                    Image("Asia")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 90)
+                                        .padding(.top, 10)
+                                }
                             }
                             NavigationLink(destination: OceaniaView()){
                                 
-                                Circle()
-                                    .frame(width: 120, height: 120)
-                                    .foregroundColor(.yellow)
-                                    .accessibilityLabel("Oceania")
-                                    .accessibilityHint("Opens the Oceania view")
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 120, height: 120)
+                                        .foregroundColor(.yellow)
+                                        .accessibilityLabel("Oceania")
+                                        .accessibilityHint("Opens the Oceania view")
+                                    Image("Oceania")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 90)
+                                    
+                                }
                             }
                             NavigationLink(destination: South_americaView()){
-                                Circle()
-                                    .frame(width: 120, height: 120)
-                                    .foregroundColor(.yellow)
-                                    .accessibilityLabel("South America")
-                                    .accessibilityHint("Opens the South America view")
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 120, height: 120)
+                                        .foregroundColor(.yellow)
+                                        .accessibilityLabel("South America")
+                                        .accessibilityHint("Opens the South America view")
+                                    Image("Southamerica")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 90)
+                                    
+                                }
                                 
                             }
                         }
