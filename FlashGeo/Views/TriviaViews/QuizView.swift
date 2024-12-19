@@ -13,7 +13,7 @@ struct Flag {
     }
 
 struct QuizView: View {
-        // Flags Array
+        // Flags DataSet Array
         @State private var flags = [
             // North America
             Flag(name: "United States", emoji: "🇺🇸"),
@@ -140,17 +140,20 @@ struct QuizView: View {
                         .font(.largeTitle)
                         .italic()
                         .fontWeight(.bold)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.purple)
+                        .accessibilityLabel("Game Title: World Mix")
                     
                     Text("Score: \(score)")
                         .font(.headline)
                         .foregroundColor(.blue)
+                        .accessibilityLabel("Your current score is \(score)")
                     
                     if currentQuestion < flags.count {
                         VStack(spacing: 30) {
                             
                             Text(flags[currentQuestion].emoji)
                                 .font(.system(size: 100))
+                                .accessibilityLabel("Flag displayed: \(flags[currentQuestion].name)")
                             
                             ForEach(options, id: \.self) { option in
                                 Button(action: {
@@ -163,6 +166,8 @@ struct QuizView: View {
                                         .padding()
                                         .background(Color.blue.opacity(1))
                                         .cornerRadius(10)
+                                        .accessibilityLabel(option)
+                                        .accessibilityHint("Tap to select this option as your answer.")
                                 }
                             }
                             
@@ -170,6 +175,8 @@ struct QuizView: View {
                                 Text(feedback)
                                     .foregroundColor(feedback.contains("Correct") ? .green : .red)
                                     .font(.headline)
+                                    .accessibilityLabel(feedback)
+                                    .accessibilityHint(feedback.contains("Correct") ? "You got the correct answer!" : "This was not the correct answer.")
                             }
                         }
                         .padding()
@@ -177,8 +184,11 @@ struct QuizView: View {
                 }
                 .alert("Game Over!", isPresented: $gameOver) {
                     Button("Play Again", action: resetGame)
+                        .accessibilityLabel("Play Again")
+                        .accessibilityHint("Tap to restart the quiz.")
                 } message: {
                     Text("Your final score is \(score) out of \(flags.count)")
+                    .accessibilityLabel("Game over. Your final score is \(score) out of \(flags.count).")
                 }
             }
         }

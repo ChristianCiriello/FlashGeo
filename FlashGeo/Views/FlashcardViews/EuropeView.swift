@@ -25,8 +25,10 @@ struct EuropeView: View {
                 // FlashcardView with flip logic
                 VStack(alignment: .leading) {
                     Text(flashcard.question)
-                        .font(.headline)
+                        .font(.title2)
+                        .bold()
                         .padding(.bottom, 5)
+                        .accessibilityLabel("Question: \(flashcard.question)")
                     
                     if isFlipped {
                         Text(flashcard.answer)
@@ -34,6 +36,11 @@ struct EuropeView: View {
                             .bold()
                             .foregroundColor(.white)
                             .padding(.bottom, 5)
+                    } else {
+                        Text("Tap to reveal the answer.")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .accessibilityHidden(true) // Not needed for VoiceOver
                     }
                     
                     Image(flashcard.imageName)
@@ -51,13 +58,14 @@ struct EuropeView: View {
                         isFlipped.toggle()
                     }
                 }
+                .accessibilityHint(isFlipped ? "Double-tap to hide the answer." : "Double-tap to reveal the answer.")
 
                 // Pulsante "Next Question"
                 if isFlipped {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25)
                             .frame(width: 140, height: 30)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.purple)
                         Button("Next Flashcard") {
                         // goes to the next flashcard
                         currentCardIndex += 1
@@ -67,14 +75,18 @@ struct EuropeView: View {
                             .foregroundColor(.white)
                             .bold()
                             .padding()
+                            .accessibilityLabel("Next Flashcard")
+                            .accessibilityHint("Loads the next flashcard.")
                     }
                 }
             } else {
-                Text("No more questions!")
+                Text("No more flashcards available!")
                     .foregroundColor(.blue)
                     .bold()
                     .font(.title)
                     .padding()
+                    .accessibilityLabel("No more flashcards available.")
+                    .accessibilityHint("You have completed all the flashcards for Europe.")
             }
         }
     }

@@ -16,23 +16,31 @@ struct ContentView: View {
                     RoundedRectangle (cornerRadius: 35)
                         .foregroundColor(.blue)
                         .frame(width: 370, height: 300)
+                        .accessibilityHidden(true) // Hides this shape from VoiceOver
+                    
                     RoundedRectangle (cornerRadius: 35)
                         .foregroundColor(.white)
                         .frame(width: 340, height: 230)
+                        .accessibilityHidden(true) // Hides this shape from VoiceOver
+                    
                     VStack {
                         Text ("Hi User")
                             .bold()
                             .font(.title3)
+                            .accessibilityLabel("Greeting message: Hi User")
                             
                         
                         Text ("Welcome Back!")
                             .font(.largeTitle)
                             .bold()
+                            .accessibilityLabel("Welcome message: Welcome Back!")
                         
                         Image (systemName: "globe.europe.africa.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 70, height: 70)
+                            .accessibilityLabel("Globe icon")
+                        
                     } // End Vstack x texts
                 }// (End ZStack Rectangles)
                
@@ -44,18 +52,24 @@ struct ContentView: View {
                             Circle()
                                 .frame(width: 120, height: 120)
                                 .foregroundColor(.yellow)
+                                .accessibilityLabel("North America")
+                                .accessibilityHint("Opens the North America view")
                         }
                         NavigationLink(destination: EuropeView()){
                             
                             Circle()
                                 .frame(width: 120, height: 120)
                                 .foregroundColor(.yellow)
+                                .accessibilityLabel("Europe")
+                                .accessibilityHint("Opens the Europe view")
                         }
                         NavigationLink(destination: AfricaView()){
                             
                             Circle()
                                 .frame(width: 120, height: 120)
                                 .foregroundColor(.yellow)
+                                .accessibilityLabel("Africa")
+                                .accessibilityHint("Opens the Africa view")
                         }
                         
                     }
@@ -68,17 +82,24 @@ struct ContentView: View {
                                 Circle()
                                     .frame(width: 120, height: 120)
                                     .foregroundColor(.yellow)
+                                    .accessibilityLabel("Asia")
+                                    .accessibilityHint("Opens the Asia view")
                             }
                             NavigationLink(destination: OceaniaView()){
                                 
                                 Circle()
                                     .frame(width: 120, height: 120)
                                     .foregroundColor(.yellow)
+                                    .accessibilityLabel("Oceania")
+                                    .accessibilityHint("Opens the Oceania view")
                             }
                             NavigationLink(destination: South_americaView()){
                                 Circle()
                                     .frame(width: 120, height: 120)
                                     .foregroundColor(.yellow)
+                                    .accessibilityLabel("South America")
+                                    .accessibilityHint("Opens the South America view")
+                                
                             }
                         }
                     }

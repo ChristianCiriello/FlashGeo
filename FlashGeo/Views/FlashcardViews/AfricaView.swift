@@ -13,7 +13,7 @@ struct AfricaView: View {
     @State private var isFlipped = false
     
     // MARK: - Content
-    // Takes flashcard from Europe Dataset
+    // Takes flashcard from Africa Dataset
     private var flashcards: [Flashcard] {
         return FlashcardDataset.continents["Africa"] ?? []
     }
@@ -25,8 +25,10 @@ struct AfricaView: View {
                 // FlashcardView with flip logic
                 VStack(alignment: .leading) {
                     Text(flashcard.question)
-                        .font(.headline)
+                        .font(.title2)
+                        .bold()
                         .padding(.bottom, 5)
+                        .accessibilityLabel("Question: \(flashcard.question)")
                     
                     if isFlipped {
                         Text(flashcard.answer)
@@ -34,6 +36,13 @@ struct AfricaView: View {
                             .bold()
                             .foregroundColor(.white)
                             .padding(.bottom, 5)
+                            .accessibilityLabel("Answer: \(flashcard.answer)")
+                            .accessibilityHint("This is the answer to the question.")
+                    } else {
+                        Text("Tap to reveal the answer.")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .accessibilityHidden(true) // Not needed for VoiceOver
                     }
                     
                     Image(flashcard.imageName)
@@ -51,13 +60,14 @@ struct AfricaView: View {
                         isFlipped.toggle()
                     }
                 }
+                .accessibilityHint(isFlipped ? "Double-tap to hide the answer." : "Double-tap to reveal the answer.")
 
-                // Pulsante "Next Question"
+                //  Next flashcard Button
                 if isFlipped {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25)
                             .frame(width: 140, height: 30)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.purple)
                         Button("Next Flashcard") {
                         // goes to the next flashcard
                         currentCardIndex += 1
@@ -67,14 +77,18 @@ struct AfricaView: View {
                             .foregroundColor(.white)
                             .bold()
                             .padding()
+                            .accessibilityLabel("Next Flashcard")
+                            .accessibilityHint("Loads the next flashcard.")
                     }
                 }
             } else {
-                Text("No more questions!")
+                Text("No more flashcards available!")
                     .foregroundColor(.blue)
                     .bold()
                     .font(.title)
                     .padding()
+                    .accessibilityLabel("No more flashcards available.")
+                    .accessibilityHint("You have completed all the flashcards for Africa.")
             }
         }
     }
