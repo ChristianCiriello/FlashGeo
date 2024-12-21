@@ -136,15 +136,27 @@ struct QuizView: View {
                 .ignoresSafeArea()
                 
                 VStack(spacing: 20) {
-                    Text("WORLD MIX")
-                        .font(.largeTitle)
-                        .italic()
-                        .fontWeight(.bold)
-                        .foregroundColor(.purple)
-                        .accessibilityLabel("Game Title: World Mix")
+                    ZStack {
+                        RoundedRectangle (cornerRadius: 35)
+                            .foregroundColor (.blue)
+                            .frame(width: 250, height: 150)
+                        
+                        RoundedRectangle (cornerRadius: 35)
+                            .foregroundColor (.yellow)
+                            .frame(width: 220, height: 110)
+                        
+                        Text("WORLD MIX")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .accessibilityLabel("Game Title: World Mix")
+                        
+                    }
+                    
                     
                     Text("Score: \(score)")
-                        .font(.headline)
+                        .font(.title2)
+                        .fontWeight(.bold)
                         .foregroundColor(.blue)
                         .accessibilityLabel("Your current score is \(score)")
                     
