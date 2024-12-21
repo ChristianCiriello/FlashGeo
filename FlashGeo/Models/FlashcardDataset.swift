@@ -59,13 +59,51 @@ struct FlashcardDataset {
     static let asia: [Flashcard] = [
         Flashcard(
             question: "Which Country is it?",
-            answer: "Nepal",
-            imageName: "everest",
+            answer: "China",
+            imageName: "China",
             continent: "Asia"
+        ),
+        
+        Flashcard(
+            question: "Which Country is it?",
+            answer: "Japan",
+            imageName: "Japan",
+            continent: "Asia"
+        ),
+        
+        Flashcard(
+            question: "Which Country is it?",
+            answer: "India",
+            imageName: "India",
+            continent: "Asia"
+        )
+
+    ]
+    
+    static let northamerica: [Flashcard] = [
+        Flashcard(
+            question: "Which Country is it?",
+            answer: "Mexico",
+            imageName: "Mexico",
+            continent: "America"
+        ),
+        
+        Flashcard(
+            question: "Which Country is it?",
+            answer: "USA",
+            imageName: "Usa",
+            continent: "America"
+        ),
+        
+        Flashcard(
+            question: "Which Country is it?",
+            answer: "Canada",
+            imageName: "Canada",
+            continent: "America"
         )
     ]
     
-    static let america: [Flashcard] = [
+    static let southamerica: [Flashcard] = [
         Flashcard(
             question: "Which Country is it?",
             answer: "USA",
@@ -88,6 +126,7 @@ struct FlashcardDataset {
         "Europe": europe,
         "Oceania": oceania,
         "Asia": asia,
-        "America": america
+        "North America": northamerica,
+        "South America": southamerica
     ]
 }
