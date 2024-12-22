@@ -135,14 +135,14 @@ struct QuizView: View {
                               endPoint: .topTrailing)
                 .ignoresSafeArea()
                 
-                VStack(spacing: 20) {
+                VStack(spacing: 15) {
                     ZStack {
                         RoundedRectangle (cornerRadius: 35)
-                            .foregroundColor (.blue)
+                            .foregroundColor (.yellow)
                             .frame(width: 250, height: 150)
                         
                         RoundedRectangle (cornerRadius: 35)
-                            .foregroundColor (.yellow)
+                            .foregroundColor (.purple)
                             .frame(width: 220, height: 110)
                         
                         Text("WORLD MIX")
@@ -152,6 +152,7 @@ struct QuizView: View {
                             .accessibilityLabel("Game Title: World Mix")
                         
                     }
+                    .padding (.top, 20)
                     
                     
                     Text("Score: \(score)")
@@ -174,10 +175,10 @@ struct QuizView: View {
                                     Text(option)
                                         .font(.title3)
                                         .foregroundColor(.white)
-                                        .frame(maxWidth: .infinity)
+                                        .frame(maxWidth: 280)
                                         .padding()
                                         .background(Color.blue.opacity(1))
-                                        .cornerRadius(10)
+                                        .cornerRadius(20)
                                         .accessibilityLabel(option)
                                         .accessibilityHint("Tap to select this option as your answer.")
                                 }

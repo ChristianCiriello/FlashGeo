@@ -13,12 +13,12 @@ struct ContentView: View {
             VStack (spacing: 65){
                 // Begin ZStack Rectangles)
                 ZStack {
-                    RoundedRectangle (cornerRadius: 35)
+                    RoundedRectangle (cornerRadius: 60)
                         .foregroundColor(.blue)
                         .frame(width: 370, height: 300)
                         .accessibilityHidden(true) // Hides this shape from VoiceOver
                     
-                    RoundedRectangle (cornerRadius: 35)
+                    RoundedRectangle (cornerRadius: 60)
                         .foregroundColor(.white)
                         .frame(width: 340, height: 230)
                         .accessibilityHidden(true) // Hides this shape from VoiceOver
