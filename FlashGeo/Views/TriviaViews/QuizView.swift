@@ -52,7 +52,7 @@ struct QuizView: View {
             Flag(name: "Ecuador", emoji: "🇪🇨"),
             Flag(name: "Falkland Islands", emoji: "🇫🇰"),
             Flag(name: "South Georgia & South Sandwich Islands", emoji: "🇬🇸"),
-            Flag(name: "Frenc Guiana", emoji: "🇬🇫"),
+            Flag(name: "French Guiana", emoji: "🇬🇫"),
             Flag(name: "Guyana", emoji: "🇬🇾"),
             Flag(name: "Paraguay", emoji: "🇵🇾"),
             Flag(name: "Perù", emoji: "🇵🇪"),
@@ -131,8 +131,8 @@ struct QuizView: View {
         var body: some View {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [.white, .white]),
-                              startPoint: .bottomLeading,
-                              endPoint: .topTrailing)
+                              startPoint: .topLeading,
+                              endPoint: .bottomTrailing)
                 .ignoresSafeArea()
                 
                 VStack(spacing: 15) {
@@ -162,10 +162,10 @@ struct QuizView: View {
                         .accessibilityLabel("Your current score is \(score)")
                     
                     if currentQuestion < flags.count {
-                        VStack(spacing: 30) {
+                        VStack(spacing: 20) {
                             
                             Text(flags[currentQuestion].emoji)
-                                .font(.system(size: 100))
+                                .font(.system(size: 120))
                                 .accessibilityLabel("Flag displayed: \(flags[currentQuestion].name)")
                             
                             ForEach(options, id: \.self) { option in
@@ -173,11 +173,12 @@ struct QuizView: View {
                                     checkAnswer(option)
                                 }) {
                                     Text(option)
-                                        .font(.title3)
+                                        .font(.title2)
+                                        .fontWeight(.medium)
                                         .foregroundColor(.white)
                                         .frame(maxWidth: 280)
                                         .padding()
-                                        .background(Color.blue.opacity(1))
+                                        .background(Color.purple.opacity(1))
                                         .cornerRadius(20)
                                         .accessibilityLabel(option)
                                         .accessibilityHint("Tap to select this option as your answer.")
